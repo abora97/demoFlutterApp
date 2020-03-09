@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterappnew/signIn.dart';
 import 'package:toast/toast.dart';
 
 class Login extends StatefulWidget {
@@ -34,7 +35,7 @@ class _LoginState extends State<Login> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("no Account yet?"),
+                    Text("No Account yet ?"),
                     Container(
                       margin: const EdgeInsets.only(
                           left: 5.0, top: 0.0, right: 5.0, bottom: 0.0),
@@ -44,9 +45,9 @@ class _LoginState extends State<Login> {
                           style: TextStyle(color: Colors.blue),
                         ),
                         onTap: () {
-                          Toast.show("yaaaaaaaaaah", context,
-                              duration: Toast.LENGTH_SHORT,
-                              gravity: Toast.BOTTOM);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignIn()));
                         },
                       ),
                     )
@@ -60,9 +61,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(color: Colors.blue),
                     ),
                     color: Colors.amber,
-                    onPressed: () {
-                      onClickBtn();
-                    },
+                    onPressed: onClickBtn,
                   ),
                 )
               ],
